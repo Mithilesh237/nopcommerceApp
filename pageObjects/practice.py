@@ -1,9 +1,13 @@
 from selenium import webdriver
 from selenium.webdriver import ActionChains, Keys
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.support.select import Select
 import time
 from selenium.webdriver.support.select import Select
+import os
 
 ser_obj = Service("C:\\chromedriver2022\\chromedriver.exe")
 driver = webdriver.Chrome(service=ser_obj)
@@ -39,8 +43,9 @@ act.perform()
 
 #nput2.click().key_down(Keys.CONTROL).send_keys("v").perform()  --single line
 
+driver.save_screenshot(os.getcwd())
 
-
+dropdown = Select()
 
 
 
